@@ -22,11 +22,11 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name='posts'
     )
     image = models.ImageField(
-        upload_to='posts/', null=True, blank=True
-    )  # поле для картинки
+        upload_to='posts/', null=True, blank=True, verbose_name='picture_field'
+    )
     group = models.ForeignKey(
-        Group, on_delete=models.SET_NULL,
-        related_name='posts', blank=True, null=True
+        Group, on_delete=models.CASCADE,
+        related_name="posts", blank=True, null=True
     )
 
     def __str__(self):
