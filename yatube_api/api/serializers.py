@@ -18,7 +18,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Group
-        fields = '__all__'
+        fields = ("id", "slug", "title", "description")
 
 
 class PostSerializer(serializers.ModelSerializer):
